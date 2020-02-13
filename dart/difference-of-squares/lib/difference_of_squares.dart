@@ -3,9 +3,7 @@ import 'dart:math';
 class DifferenceOfSquares {
   // Put your code here
   int differenceOfSquares(int n) {
-    var tmp = (n * (n + 1) / 2).toInt();
-    var list = [for (var i = 1; i <= n; i += 1) i];
-    return list.fold(0, (prev, curr) => prev + curr * (tmp - curr));
+    return squareOfSum(n) - sumOfSquares(n);
   }
 
   int squareOfSum(int n) {
@@ -13,7 +11,6 @@ class DifferenceOfSquares {
   }
 
   int sumOfSquares(int n) {
-    var list = [for (var i = 1; i <= n; i += 1) i];
-    return list.fold<num>(0, (prev, curr) => prev + pow(curr, 2)).toInt();
+    return (n * (n + 1) * (2 * n + 1) / 6).toInt();
   }
 }
