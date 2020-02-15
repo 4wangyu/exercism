@@ -1,17 +1,10 @@
 class WordCount {
-  Map<String, int> countWords(String s) {
-    var m = new Map<String, int>();
-    s
-        .replaceAll(new RegExp('[^a-zA-Z0-9\']+'), ' ')
-        .trim()
-        .split(' ')
-        .forEach((word) {
-      if (word != '\'') {
-        String cw = word.replaceAll(new RegExp('^\'+|\'+\$'), '').toLowerCase();
-        int c = m[cw] ?? 0;
-        m[cw] = c + 1;
-      }
+  Map<String, int> countWords(String sentence) {
+    var map = new Map<String, int>();
+    RegExp(r"[\w]+['][\w]+|[\w]+").allMatches(sentence).forEach((match) {
+      String word = match.group(0).toLowerCase();
+      map[word] = (map[word] ?? 0) + 1;
     });
-    return m;
+    return map;
   }
 }
