@@ -2,7 +2,7 @@ package acronym
 
 import "strings"
 
-// Abbreviate returns acronym.
+// Abbreviate func
 func Abbreviate(s string) (out string) {
 	s = replaceWithSpace(s, []string{"-", "_"})
 

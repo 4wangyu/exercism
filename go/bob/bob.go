@@ -33,7 +33,7 @@ func newRemark(remark string) Remark {
 	return Remark{strings.TrimSpace(remark)}
 }
 
-// Hey responds to remark
+// Hey func
 func Hey(remark string) string {
 	r := newRemark(remark)
 	switch {
